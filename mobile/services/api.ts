@@ -3,28 +3,7 @@ import * as SecureStore from 'expo-secure-store';
 import { Platform } from 'react-native';
 
 function getDefaultApiBaseUrl(): string {
-  if (!__DEV__) {
-    return 'http://localhost:5000';
-  }
-
-  const debuggerHost =
-    (Constants.manifest as any)?.debuggerHost ||
-    (Constants.expoConfig as any)?.hostUri;
-
-  if (typeof debuggerHost === 'string') {
-    const host = debuggerHost.split(':')[0];
-    if (host && host !== 'localhost' && host !== '127.0.0.1') {
-      return `http://${host}:5000`;
-    }
-  }
-
-  if (Platform.OS === 'android') {
-    // Android emulator default host to reach machine localhost.
-    return 'http://10.0.2.2:5000';
-  }
-
-  // iOS simulator and web can usually reach localhost directly.
-  return 'http://localhost:5000';
+  return 'https://coastalert.onrender.com';
 }
 
 // The user can override this base URL in the Settings tab.
