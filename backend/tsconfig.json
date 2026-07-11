@@ -12,5 +12,12 @@
     "resolveJsonModule": true,
     "typeRoots": ["./node_modules/@types", "./src/types"]
   },
-  "include": ["src/**/*", "seed.ts"]
+  "include": ["src/**/*", "seed.ts"],
+  "exclude": [
+    "src/test-api.ts",
+    "src/test-jwt-mongo.ts",
+    "src/test-llm.ts",
+    "whatsapp-test.js",
+    "node_modules"
+  ]
 }

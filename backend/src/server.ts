@@ -72,7 +72,7 @@ app.use((err: any, req: Request, res: Response, next: NextFunction) => {
 const startServer = async () => {
   console.log('Connecting to MongoDB at:', MONGODB_URI);
   try {
-    await mongoose.connect(MONGODB_URI, { serverSelectionTimeoutMS: 2000 });
+    await mongoose.connect(MONGODB_URI, { serverSelectionTimeoutMS: 2000 } as any);
     console.log('Successfully connected to MongoDB.');
   } catch (err: any) {
     console.warn('MongoDB connection failure:', err.message);
